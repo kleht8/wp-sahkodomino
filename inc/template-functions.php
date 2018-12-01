@@ -29,10 +29,14 @@ function twentyseventeen_body_classes( $classes ) {
 		$classes[] = 'twentyseventeen-customizer';
 	}
 
-	// Add class on front page.
-	if ( is_front_page() && 'posts' !== get_option( 'show_on_front' ) ) {
-		$classes[] = 'twentyseventeen-front-page';
-	}
+	// // Add class on front page.
+	// if ( is_front_page() && 'posts' !== get_option( 'show_on_front' ) ) {
+	// 	$classes[] = 'twentyseventeen-front-page';
+	// }
+
+	// Same class for each page
+	$classes[] = 'twentyseventeen-front-page';
+
 
 	// Add a class if there is a custom header.
 	if ( has_header_image() ) {
