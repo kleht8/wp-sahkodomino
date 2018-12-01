@@ -15,8 +15,20 @@
 		<?php the_custom_logo(); ?>
 
 		<div class="site-branding-text">
-			<h1 class="site-title"><?php echo get_bloginfo( 'description' ) ?> </h1>
+			
+			<?php if ( is_active_sidebar( 'tagline' )): ?>
+		<?php
+		if ( is_active_sidebar( 'tagline' ) ): ?>
+				<?php dynamic_sidebar( 'tagline' ); ?>
+			</div>
+		<?php endif ?>
+	</aside><!-- .widget-area -->
+<?php else: ?>
+	<h1 class="site-title"><?php echo get_bloginfo( 'description' ) ?> </h1>
+<?php endif; ?>
+
 		</div>
+
 		<!-- .site-branding-text -->
 
 		<?php if ( ( twentyseventeen_is_frontpage() || ( is_home() && is_front_page() ) ) && ! has_nav_menu( 'top' ) ) : ?>

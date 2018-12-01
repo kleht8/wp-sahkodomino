@@ -345,7 +345,17 @@ function twentyseventeen_widgets_init() {
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
-	) );
+	));
+
+	register_sidebar( array(
+		'name'          => __( 'Page tagline', 'twentyseventeen' ),
+		'id'            => 'tagline',
+		'description'   => __( 'Add widgets here to appear in header image.', 'twentyseventeen' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	));
 }
 add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
 
