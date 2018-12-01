@@ -1569,6 +1569,7 @@ body {
 /* Site branding */
 
 .site-branding {
+	margin-left: 10pt;
 	padding: 1em 0;
 	position: relative;
 	-webkit-transition: margin-bottom 0.2s;
