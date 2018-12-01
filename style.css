@@ -52,10 +52,14 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 --------------------------------------------------------------*/
 
 /* fonts */
-/*@font-face {
+@font-face {
 font-family: "ubahn-light";
 src: url("/wp-content/themes/sahkodomino/assets/fonts/Ubahn-Light.woff") format('woff');
-}*/
+}
+@font-face {
+font-family: "ubahn";
+src: url("/wp-content/themes/sahkodomino/assets/fonts/Ubahn.woff") format('woff');
+}
 
 html {
 	line-height: 1.15;
@@ -422,7 +426,7 @@ input,
 select,
 textarea {
 	color: #333;
-	font-family: "ubahn-light", "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
 	font-size: 15px;
 	font-size: 0.9375rem;
 	font-weight: 400;
@@ -1584,15 +1588,19 @@ body {
 }
 
 .site-title {
+	/*font-family: ubahn;*/
 	clear: none;
-	font-size: 24px;
-	font-size: 1.5rem;
-	font-weight: 800;
+	/*font-size: 30px;*/
+	/*font-size: 1.9rem;*/
+	font-size: 4vw;
+	font-weight: 600;
 	line-height: 1.25;
-	letter-spacing: 0.08em;
+	letter-spacing: 0.05em;
 	margin: 0;
 	padding: 0;
 	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .site-title,
@@ -1647,12 +1655,15 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 body:not(.title-tagline-hidden) .site-branding-text {
 display: inline-block;
-vertical-align: middle;
 position: absolute;
-top: 200px;
-z-index: 99999;
-width: 500px;
-/*color: white !important;*/
+z-index: 100;
+width: 60vw;
+max-width: 500px;
+padding-top: calc(20vh);
+left: 4vw;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+
 }
 .custom-header {
 	position: relative;
@@ -1830,7 +1841,7 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 
 .panel-content .wrap {
 	padding-bottom: 0.5em;
-	padding-top: 1.75em;
+	padding-top: 3.00em;
 }
 
 /* Panel edit link */
@@ -1880,6 +1891,7 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 .site-content-contain {
 	background-color: #f2f8fc;
 	position: relative;
+	z-index: 999;
 }
 
 .site-content {
@@ -1913,11 +1925,11 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 .page-title,
 body.page:not(.twentyseventeen-front-page) .entry-title {
 	color: #222;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: 800;
+	font-size: 17px;
+	font-size: 1.7rem;
+	/*font-weight: 800;*/
 	letter-spacing: 0.14em;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 
 .entry-header .entry-title {
@@ -2048,7 +2060,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	padding-bottom: 2em;
 }
 
-body:not(.twentyseventeen-front-page) .entry-header {
+/*body:not(.twentyseventeen-front-page) .entry-header {
 	padding: 1em 0;
 }
 
@@ -2057,11 +2069,11 @@ body:not(.twentyseventeen-front-page) .entry-content,
 body:not(.twentyseventeen-front-page) #comments {
 	margin-left: auto;
 	margin-right: auto;
-}
+}*/
 
-body:not(.twentyseventeen-front-page) .entry-header {
+/*body:not(.twentyseventeen-front-page) .entry-header {
 	padding-top: 0;
-}
+}*/
 
 .blog .entry-meta a.post-edit-link,
 .archive .entry-meta a.post-edit-link,
@@ -2093,7 +2105,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 /* Single Post */
 
-.single-post:not(.has-sidebar) #primary,
+/*.single-post:not(.has-sidebar) #primary,
 .page.page-one-column:not(.twentyseventeen-front-page) #primary,
 .archive.page-one-column:not(.has-sidebar) .page-header,
 .archive.page-one-column:not(.has-sidebar) #primary {
@@ -2101,7 +2113,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	margin-right: auto;
 	max-width: 740px;
 }
-
+*/
 /*.single-featured-image-header {
 	background-color: #fafafa;
 	border-bottom: 1px solid #eee;
@@ -2197,6 +2209,11 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .entry-footer .edit-link a.post-edit-link:hover,
 .entry-footer .edit-link a.post-edit-link:focus {
 	background-color: #767676;
+}
+/* Custom Footer */
+#custom-footer {
+	float:right;
+	font-size: 13pt;
 }
 
 /* Post Formats */
@@ -2323,8 +2340,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 /* Footer widgets */
 
 .site-footer .widget-area {
-	padding-bottom: 2em;
-	padding-top: 2em;
+	padding-bottom: 1em;
+	padding-top: 1em;
 }
 
 /* Social nav */
@@ -3292,9 +3309,11 @@ p > object:only-child {
 
 	/* Site Branding */
 
-/*	.site-branding {
-		padding: 3em 0;
-	}*/
+	.site-branding {
+		width: 500px;
+		top: calc(100% + 100px);
+		/*padding: 3em 0;*/
+	}
 
 	/* Front Page */
 
@@ -3381,8 +3400,9 @@ p > object:only-child {
 
 	.wrap {
 		max-width: 1000px;
-		padding-left: 3em;
+		/*padding-left: 5em;*/
 		padding-right: 3em;
+		padding-top: 3.5em;
 	}
 
 	.has-sidebar:not(.error404) #primary {
@@ -3419,6 +3439,7 @@ p > object:only-child {
 		width: 100%;
 	}*/
 
+	.has-header-image.page-template-default .custom-header,
 	.has-header-image.twentyseventeen-front-page .custom-header,
 	.has-header-video.twentyseventeen-front-page .custom-header,
 	.has-header-image.home.blog .custom-header,
@@ -3466,8 +3487,10 @@ p > object:only-child {
 	}
 
 	.site-title {
-		font-size: 36px;
-		font-size: 2.25rem;
+		/*font-size: 50px;*/
+		font-size: 2.5rem;
+		/*font-size: 2vw;*/
+
 	}
 
 	.site-description {
@@ -3774,9 +3797,11 @@ p > object:only-child {
 	}
 
 	.page-two-column .panel-content .entry-content {
+		padding-top: 0.3em;
 		float: right;
 		width: 58%;
 	}
+
 
 	/* Front Page - Recent Posts */
 
@@ -3865,7 +3890,8 @@ p > object:only-child {
 	body.page-two-column:not(.archive) #primary .entry-content,
 	body.page-two-column #comments {
 		float: right;
-		width: 58%;
+		width: 64%;
+		padding-top: 0.3em;
 	}
 
 	.blog .site-main > article,
@@ -4037,7 +4063,7 @@ p > object:only-child {
 		font-size: 14px;
 		font-size: 0.875rem;
 		line-height: 1.6;
-		margin-top: 3em;
+		/*margin-top: 3em;*/
 	}
 
 	.site-footer .widget-column.footer-widget-1 {
@@ -4243,11 +4269,11 @@ p > object:only-child {
 		font-size: 12pt;
 	}
 
-	.page .panel-content .entry-title,
+/*	.page .panel-content .entry-title,
 	.page-title,
 	body.page:not(.twentyseventeen-front-page) .entry-title {
 		font-size: 10pt;
-	}
+	}*/
 
 	/* Layout */
 
@@ -4281,7 +4307,9 @@ p > object:only-child {
 	}*/
 
 	.site-title {
-		font-size: 25pt;
+		/*font-size: 25pt;*/
+
+
 	}
 
 	.site-description {
@@ -4314,7 +4342,7 @@ p > object:only-child {
 	.twentyseventeen-front-page.has-header-video .site-title,
 	.twentyseventeen-front-page.has-header-image .site-title a,
 	.twentyseventeen-front-page.has-header-video .site-title a {
-		color: #fff !important; /* Make sure color schemes don't affect to print */
+		/*color: #fff !important; */
 	}
 
 	h2,
@@ -4338,3 +4366,4 @@ p > object:only-child {
 		padding: 0;
 	}
 }
+

@@ -15,19 +15,7 @@
 		<?php the_custom_logo(); ?>
 
 		<div class="site-branding-text">
-			<?php if ( is_front_page() ) : ?>
-				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-			<?php else : ?>
-				<p class="site-title"><?php bloginfo( 'name' ); ?></p>
-			<?php endif; ?>
-
-			<?php
-			$description = get_bloginfo( 'description', 'display' );
-
-			if ( $description || is_customize_preview() ) :
-			?>
-				<p class="site-description"><?php echo $description; ?></p>
-			<?php endif; ?>
+			<h1 class="site-title"><?php echo get_bloginfo( 'description' ) ?> </h1>
 		</div>
 		<!-- .site-branding-text -->
 

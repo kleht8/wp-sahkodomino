@@ -10,6 +10,7 @@
 
 	function initMainNavigation( container ) {
 
+
 		// Add dropdown toggle that displays child menu items.
 		var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
 			.append( twentyseventeenScreenReaderText.icon )
@@ -49,17 +50,20 @@
 
 	// Enable menuToggle.
 	(function() {
-
+		// console.log(menuToggle);
 		// Return early if menuToggle is missing.
-		if ( ! menuToggle.length ) {
-			return;
-		}
+		// if ( ! menuToggle.length ) {
+		// 	// alert(1);
+		// 	return;
+		// }
+		console.info(menuToggle);
 
 		// Add an initial value for the attribute.
 		menuToggle.attr( 'aria-expanded', 'false' );
 
 		menuToggle.on( 'click.twentyseventeen', function() {
 			siteNavContain.toggleClass( 'toggled-on' );
+			// alert(1);
 
 			$( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
 		});
